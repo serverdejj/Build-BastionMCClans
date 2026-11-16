@@ -1,0 +1,19 @@
+name: BastionMCClans
+version: 0.1.0-beta
+main: mc.bastion.clans.BastionMCClans
+api-version: '1.21.11'
+author: BASTION MC
+softdepend: [PlaceholderAPI, Vault, BastionMCNameTangs]
+commands:
+  clan:
+    description: Sistema de clanes de BASTION MC
+    usage: /clan
+    aliases: [clanes]
+  bastionclans:
+    description: Administracion de BastionMCClans
+    permission: bastionclans.admin.reload
+permissions:
+  bastionclans.admin.reload:
+    default: op
+  bastionclans.admin.delete:
+    default: op

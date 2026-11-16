@@ -1,0 +1,22 @@
+clan-name:
+  min-length: 3
+  max-length: 16
+  allowed-pattern: '[A-Za-z0-9_]+'
+creation:
+  cost-enabled: false
+  cost: 0
+teleport:
+  delay-seconds: 5
+  cancel-on-movement: true
+  cancel-on-damage: true
+  cancel-on-world-change: true
+ranking:
+  daily-point: 1
+  kill-point: 1
+  death-penalty: 1
+pvp:
+  prevent-allied-damage: true
+  prevent-same-clan-damage-by-default: true
+  repeated-kill-cooldown-minutes: 30
+nametag:
+  fallback: '&c✘'

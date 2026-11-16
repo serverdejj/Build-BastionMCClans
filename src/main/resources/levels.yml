@@ -1,0 +1,16 @@
+levels:
+  1:
+    members: 10
+    bases: 1
+    alliances: 1
+  2:
+    days-or-kills: [7, 10]
+    members: 20
+    bases: 2
+    alliances: 2
+  3:
+    days-or-kills: [30, 30]
+    members: 25
+    bases: 3
+    alliances: 3
+rivals-max: 5

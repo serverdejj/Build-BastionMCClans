@@ -1,0 +1,17 @@
+main:
+  title: '&#8A5CFF&lBASTION &8| &fClanes'
+  size: 54
+  items:
+    info: {slot: 10, material: BOOK, name: '&bInformación del clan', lore: ['&7Ver información y puntos']}
+    members: {slot: 12, material: PLAYER_HEAD, name: '&aMiembros', lore: ['&7Ver jugadores y rangos']}
+    bases: {slot: 14, material: ENDER_PEARL, name: '&eBases', lore: ['&7Teletransportarse a las bases']}
+    alliances: {slot: 16, material: EMERALD, name: '&aAlianzas', lore: ['&7Ver alianzas']}
+    rivals: {slot: 28, material: NETHERITE_SWORD, name: '&cRivales', lore: ['&7Ver rivalidades']}
+    levels: {slot: 30, material: EXPERIENCE_BOTTLE, name: '&bNiveles', lore: ['&7Ver progreso']}
+    rankings: {slot: 32, material: GOLD_INGOT, name: '&6Ranking', lore: ['&7Clasificación de clanes']}
+    requests: {slot: 34, material: PAPER, name: '&dSolicitudes', lore: ['&7Ver solicitudes pendientes']}
+    leave: {slot: 49, material: BARRIER, name: '&cSalir del clan', lore: ['&7Usa /clan leave']}
+  no-clan:
+    create: {slot: 20, material: ANVIL, name: '&aCrear clan', lore: ['&7Usa /clan crear <nombre>']}
+    explore: {slot: 22, material: COMPASS, name: '&eExplorar clanes', lore: ['&7Ver todos los clanes']}
+    rankings: {slot: 24, material: GOLD_INGOT, name: '&6Ranking', lore: ['&7Ver los mejores clanes']}
