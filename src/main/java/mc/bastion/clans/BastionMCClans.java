@@ -42,6 +42,12 @@ public final class BastionMCClans extends JavaPlugin implements Listener, Comman
         Objects.requireNonNull(getCommand("clan")).setExecutor(this); Objects.requireNonNull(getCommand("clan")).setTabCompleter(this);
         Objects.requireNonNull(getCommand("bastionclans")).setExecutor(this);
         Bukkit.getPluginManager().registerEvents(this,this);
+        if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+            new ClanPlaceholderExpansion(this).register();
+            getLogger().info("Placeholders bastionclans registrados para TAB/PlaceholderAPI");
+        } else {
+            getLogger().warning("PlaceholderAPI no detectado: el scoreboard no podra mostrar el clan hasta instalarlo.");
+        }
         Bukkit.getScheduler().runTaskTimer(this, () -> { refreshLevels(); saveData(); }, 1200L, 1200L);
         getLogger().info("BastionMCClans beta activado para Purpur 1.21.11");
     }
@@ -73,6 +79,9 @@ public final class BastionMCClans extends JavaPlugin implements Listener, Comman
     /** API para BastionMCNameTangs: devuelve el nombre coloreado o el símbolo por defecto. */
     public String getClanPlaceholder(UUID player){String id=memberships.get(player);Clan c=id==null?null:clans.get(id);return c==null?color(getConfig().getString("nametag.fallback","&c✘")):display(c);}
     public String getClanName(UUID player){String id=memberships.get(player);Clan c=id==null?null:clans.get(id);return c==null?"":c.name;}
+    /** Nombre de clan coloreado, con formato legible por TAB. */
+    public String getClanColored(UUID player) { String id=memberships.get(player); Clan c=id==null?null:clans.get(id); return c==null?"":display(c); }
+    public boolean hasClan(UUID player) {return getClanName(player).length()>0;}
 
     @Override public boolean onCommand(CommandSender sender,Command cmd,String label,String[] a){
         if(cmd.getName().equalsIgnoreCase("bastionclans")){if(!sender.hasPermission("bastionclans.admin.reload")){tell(sender,"no-permission");return true;}if(a.length>0&&a[0].equalsIgnoreCase("reload")){reloadFiles();tell(sender,"reload");}else sender.sendMessage("/bastionclans reload");return true;}

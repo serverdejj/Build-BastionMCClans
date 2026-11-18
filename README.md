@@ -19,3 +19,21 @@ Proyecto fuente para **Purpur 1.21.11 / Java 21**. Subir el contenido de esta ca
 - La mayoría de mensajes se editan en `messages.yml`, pero algunos textos de ayuda y avisos de esta beta están todavía en el código.
 - El autocompletado es básico y necesita filtrado contextual adicional de permisos y rangos.
 - No se ha probado en un servidor Purpur real. **Haz una copia de seguridad y prueba en un servidor de pruebas.**
+
+
+## TAB / PlaceholderAPI
+
+Instala PlaceholderAPI (PAPI) y TAB. Los placeholders están integrados en el JAR y se registran al arrancar, sin `/papi ecloud download`.
+
+- `%bastionclans_name%`: nombre sin formato (vacío si no tiene clan).
+- `%bastionclans_colored%`: nombre en el color configurado con `/clan colorname`, o `§8(§cSin Clan§8)` si no pertenece a ninguno.
+- `%bastionclans_has_clan%`: `true` / `false`.
+
+En `plugins/TAB/config.yml`, cambia la línea del scoreboard por:
+
+```yaml
+- " &e🛡 &fTu Clan: %bastionclans_colored%"
+```
+
+Si tienes dos definiciones de scoreboard, actualiza ambas. Usa `/tab reload` después de instalar y reiniciar el servidor.
+No borres `plugins/BastionMCClans/clans-data.yml`: contiene los clanes existentes.
